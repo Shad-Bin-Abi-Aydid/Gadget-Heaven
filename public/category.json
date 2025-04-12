@@ -1,0 +1,8 @@
+[
+  { "id": "cat-001", "category_name": "Smartphones" },
+  { "id": "cat-002", "category_name": "Laptops" },
+  { "id": "cat-003", "category_name": "Smartwatches" },
+  { "id": "cat-004", "category_name": "Tablets" },
+  { "id": "cat-005", "category_name": "Headphones" },
+  { "id": "cat-006", "category_name": "Gaming Consoles" }
+]

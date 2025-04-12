@@ -1,11 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
+import Category from "./Category";
+import Card from "./Card";
 
 const GadgetsCard = () => {
-    return (
-        <div>
-            <h1>Explore Cutting-Edge Gadgets</h1>
+  const data = useLoaderData();
+  const [category, setCategory] = useState([]);
+
+  useEffect(() => {
+    fetch("./category.json")
+      .then((res) => res.json())
+      .then((data) => setCategory(data));
+  }, []);
+
+  return (
+    <>
+    <h1 className="text-center text-3xl font-bold my-5">Explore Cutting-Edge Gadgets</h1>
+      <div className="grid grid-cols-1 md:grid-cols-4">
+
+        {/* showing category */}
+        <div className="text-center flex flex-col ">
+            <button className="btn bg-gray-600 mx-16 my-3 p-2 rounded-xl">All Product</button>
+          {category.map((item) => (
+            <Category key={item.id} item={item}></Category>
+          ))}
         </div>
-    );
+
+        {/* Showing Cards */}
+        <div className="col-span-3 ">
+          
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+            {
+                data.map(item => <Card key={item.product_id} item={item}></Card>)
+            }
+            </div>
+          
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default GadgetsCard;
