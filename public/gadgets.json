@@ -12,6 +12,18 @@
       "rating": 4.8
     },
     {
+      "product_id": "prod-007",
+      "product_title": "MacBook Pro 16-inch",
+      "product_image": "https://i.ibb.co/VWDS55wk/image.png",
+      "category": "Laptops",
+      "category_id": "cat-002",
+      "price": 2499,
+      "description": "Powerful laptop with M3 Max chip and Retina display.",
+      "specification": ["M3 Max", "32GB RAM", "1TB SSD"],
+      "availability": true,
+      "rating": 4.9
+    },
+    {
       "product_id": "prod-002",
       "product_title": "Samsung Galaxy S23 Ultra",
       "product_image": "https://i.ibb.co/1f8CKJJJ/image.png",
@@ -22,6 +34,30 @@
       "specification": ["Snapdragon 8 Gen 2", "256GB Storage", "6.8-inch AMOLED"],
       "availability": true,
       "rating": 4.7
+    },
+    {
+      "product_id": "prod-009",
+      "product_title": "Apple Watch Series 9",
+      "product_image": "https://i.ibb.co/wF8c98k1/image.png",
+      "category": "Smartwatches",
+      "category_id": "cat-003",
+      "price": 529,
+      "description": "Latest Apple Watch with health and fitness tracking.",
+      "specification": ["S9 Chip", "Always-on Display", "Blood Oxygen Sensor"],
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": "prod-015",
+      "product_title": "PlayStation 5",
+      "product_image": "https://i.ibb.co/3yfhHnW1/image.png",
+      "category": "Gaming Consoles",
+      "category_id": "cat-006",
+      "price": 549,
+      "description": "Next-gen gaming console from Sony.",
+      "specification": ["8K Support", "SSD Storage", "DualSense Controller"],
+      "availability": true,
+      "rating": 4.9
     },
     {
       "product_id": "prod-003",
@@ -71,18 +107,7 @@
       "availability": true,
       "rating": 4.4
     },
-    {
-      "product_id": "prod-007",
-      "product_title": "MacBook Pro 16-inch",
-      "product_image": "https://i.ibb.co/VWDS55wk/image.png",
-      "category": "Laptops",
-      "category_id": "cat-002",
-      "price": 2499,
-      "description": "Powerful laptop with M3 Max chip and Retina display.",
-      "specification": ["M3 Max", "32GB RAM", "1TB SSD"],
-      "availability": true,
-      "rating": 4.9
-    },
+    
     {
       "product_id": "prod-008",
       "product_title": "Dell XPS 13 Plus",
@@ -95,18 +120,7 @@
       "availability": true,
       "rating": 4.6
     },
-    {
-      "product_id": "prod-009",
-      "product_title": "Apple Watch Series 9",
-      "product_image": "https://i.ibb.co/wF8c98k1/image.png",
-      "category": "Smartwatches",
-      "category_id": "cat-003",
-      "price": 529,
-      "description": "Latest Apple Watch with health and fitness tracking.",
-      "specification": ["S9 Chip", "Always-on Display", "Blood Oxygen Sensor"],
-      "availability": true,
-      "rating": 4.5
-    },
+    
     {
       "product_id": "prod-010",
       "product_title": "Samsung Galaxy Watch 6",
@@ -143,18 +157,7 @@
       "availability": true,
       "rating": 4.8
     },
-    {
-      "product_id": "prod-015",
-      "product_title": "PlayStation 5",
-      "product_image": "https://i.ibb.co/3yfhHnW1/image.png",
-      "category": "Gaming Consoles",
-      "category_id": "cat-006",
-      "price": 549,
-      "description": "Next-gen gaming console from Sony.",
-      "specification": ["8K Support", "SSD Storage", "DualSense Controller"],
-      "availability": true,
-      "rating": 4.9
-    },
+   
     {
       "product_id": "prod-016",
       "product_title": "Xbox Series X",

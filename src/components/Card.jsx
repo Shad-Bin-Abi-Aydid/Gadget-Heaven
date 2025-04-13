@@ -11,11 +11,13 @@ const Card = ({ item }) => {
           className="w-full h-full object-contain p-2"
         />
       </figure>
-      <div className="card-body">
+      <div className="card-body space-y-2">
         <h2 className="card-title">{product_title}</h2>
-        <p>Price: {price}</p>
+        <p className="text-gray-400">Price: {price}</p>
         <div className="card-actions">
-          <button className="btn btn-primary">Buy Now</button>
+          <button className="border-1 py-2 px-3 text-[#9538E2] border-[#9538E2] rounded-full">
+            View Details
+          </button>
         </div>
       </div>
     </div>

@@ -17,7 +17,7 @@ const Banner = () => {
                 next level. From smart devices to <br /> the coolest
                 accessories, we have it all!
               </p>
-              <button className="btn btn-primary rounded-full">Shop Now</button>
+              <button className="btn bg-gray-300 border-1 border-gray-300 text-[#9538E2] font-bold rounded-full">Shop Now</button>
               <div className="mt-10 border-1 rounded-xl">
                 <img className="w-2xl rounded-xl p-2" src={bannerImg} alt="" />
               </div>

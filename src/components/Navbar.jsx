@@ -1,6 +1,7 @@
 import React from "react";
 import { IoCartOutline } from "react-icons/io5";
 import { GiSelfLove } from "react-icons/gi";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -28,35 +29,69 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <li>
-              <a>Home</a>
-            </li>
-            <li>
-              <a>Statistics</a>
-            </li>
-            <li>
-              <a>Dashboard</a>
-            </li>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `font-bold ${isActive ? "text-warning" : "hover:text-warning"}`
+              }
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/statistics"
+              className={({ isActive }) =>
+                `font-bold ${isActive ? "text-warning" : "hover:text-warning"}`
+              }
+            >
+              Statistics
+            </NavLink>
+            <NavLink
+              to="/dashboard"
+              className={({ isActive }) =>
+                `font-bold ${isActive ? "text-warning" : "hover:text-warning"}`
+              }
+            >
+              Dashboard
+            </NavLink>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Gadget Heaven</a>
+        <Link to="/" className="btn btn-ghost text-2xl">Gadget Heaven</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-        <li>
-              <a>Home</a>
-            </li>
-            <li>
-              <a>Statistics</a>
-            </li>
-            <li>
-              <a>Dashboard</a>
-            </li>
+        <ul className="menu menu-horizontal px-1 gap-8">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `font-bold ${isActive ? "text-warning" : "hover:text-warning"}`
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/statistics"
+            className={({ isActive }) =>
+              `font-bold ${isActive ? "text-warning" : "hover:text-warning"}`
+            }
+          >
+            Statistics
+          </NavLink>
+          <NavLink
+            to="/dashboard"
+            className={({ isActive }) =>
+              `font-bold ${isActive ? "text-warning" : "hover:text-warning"}`
+            }
+          >
+            Dashboard
+          </NavLink>
         </ul>
       </div>
       <div className="navbar-end flex gap-5">
-        <a className="bg-white text-xl text-black p-1 rounded-full"><IoCartOutline /></a>
-        <a className="bg-white text-xl text-black p-1 rounded-full"><GiSelfLove /></a>
+        <a className="bg-white text-xl text-black p-1 rounded-full">
+          <IoCartOutline />
+        </a>
+        <a className="bg-white text-xl text-black p-1 rounded-full">
+          <GiSelfLove />
+        </a>
       </div>
     </div>
   );
