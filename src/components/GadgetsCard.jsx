@@ -22,9 +22,9 @@ const GadgetsCard = () => {
 
   useEffect(() => {
     if (!categoryId) {
-      setAllData(data.slice(0,9));
-    }else if(categoryId === "all"){
       setAllData(data);
+    }else if(categoryId === "all"){
+      setAllData(data.slice(0,9));
     }else {
       const categoryWiseData = [...data].filter(
         (item) => item.category_id === categoryId
@@ -43,7 +43,7 @@ const GadgetsCard = () => {
         <div className="text-center flex flex-col bg-gray-800 mx-7 rounded-xl w-fit self-start py-5">
           <NavLink
             to="/category/all"
-            onClick={()=>setAllData(data)}
+            onClick={()=>setAllData(data.slice(0,5))}
             className={({ isActive }) =>
               `btn bg-gray-600 mx-16 my-3 p-2 rounded-xl ${
                 isActive ? "text-warning" : "hover:text-warning"
