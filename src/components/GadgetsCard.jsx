@@ -3,7 +3,6 @@ import {
   Link,
   NavLink,
   useLoaderData,
-  useNavigate,
   useParams,
 } from "react-router-dom";
 import Category from "./Category";
@@ -39,11 +38,12 @@ const GadgetsCard = () => {
       <h1 className="text-center text-3xl font-bold my-5">
         Explore Cutting-Edge Gadgets
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10">
         {/* showing category */}
-        <div className="text-center flex flex-col ">
+        <div className="text-center flex flex-col bg-gray-800 mx-7 rounded-xl w-fit self-start py-5">
           <NavLink
             to="/category/all"
+            onClick={()=>setAllData(data)}
             className={({ isActive }) =>
               `btn bg-gray-600 mx-16 my-3 p-2 rounded-xl ${
                 isActive ? "text-warning" : "hover:text-warning"

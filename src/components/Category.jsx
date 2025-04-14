@@ -1,8 +1,7 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Category = ({ item }) => {
-  console.log("item.id is", item.id);
   return (
     <>
       <NavLink
