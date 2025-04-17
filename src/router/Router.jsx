@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
 import ErrorPage from "../components/ErrorPage";
 import Home from "../Pages/Home";
@@ -41,6 +41,10 @@ const routes = createBrowserRouter([
             },
             {
                 path:"/dashboard",
+                element:< Navigate to= "/dashboard/cart" replace />
+            },
+            {
+                path:"/dashboard/:id",
                 element:<Dashboard></Dashboard>
             },
             {

@@ -1,11 +1,14 @@
 import React from "react";
 import { IoCartOutline } from "react-icons/io5";
 import { GiSelfLove } from "react-icons/gi";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+
+  const {pathname} = useLocation();
+
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className={`navbar shadow-sm ${pathname == '/' ? "bg-[#9538E2] mt-5 rounded-t-xl" : "bg-base-100"}`}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

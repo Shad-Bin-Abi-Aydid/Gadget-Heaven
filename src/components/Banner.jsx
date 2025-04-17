@@ -1,11 +1,13 @@
 import React from "react";
 import bannerImg from "../assets/images/banner.jpg";
+import { useLocation } from "react-router-dom";
 
 const Banner = () => {
+  const {pathname} = useLocation();
   return (
     <>
-      <div className="border-1 rounded-xl p-2">
-        <div className="hero bg-[#9538E2] rounded-xl">
+      <div className="">
+        <div className={`hero bg-[#9538E2] ${pathname == '/' ? "rounded-b-xl" : ""}`}>
           <div className="hero-content text-center">
             <div>
               <h1 className="text-3xl font-bold">
@@ -18,7 +20,7 @@ const Banner = () => {
                 accessories, we have it all!
               </p>
               <button className="btn bg-gray-300 border-1 border-gray-300 text-[#9538E2] font-bold rounded-full">Shop Now</button>
-              <div className="mt-10 border-1 rounded-xl">
+              <div className="mt-10 border-1 rounded-xl bg-gray-300/35">
                 <img className="w-2xl rounded-xl p-2" src={bannerImg} alt="" />
               </div>
             </div>

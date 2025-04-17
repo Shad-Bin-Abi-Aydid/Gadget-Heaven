@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { GiSelfLove } from "react-icons/gi";
 import { IoCartOutline } from "react-icons/io5";
 import { addCartData } from "../utilities/localStroge";
+import { addWishData } from "../utilities/wishListStorage";
 
 const GadgetDetails = () => {
   const data = useLoaderData();
@@ -32,9 +33,13 @@ const GadgetDetails = () => {
 
   }
 
+  const handleWish = (product) =>{
+    addWishData(product);
+  }
+
   return (
-    <div>
-      <div className="text-center space-y-5 bg-[#9538E2] pb-52">
+    <div className="pb-5">
+      <div className="text-center space-y-5 bg-[#9538E2] pb-52 pt-10">
         <h1 className="text-2xl font-bold">Product Details</h1>
         <p className="text-gray-400">
           Explore the latest gadgets that will take your experience to the next
@@ -44,7 +49,7 @@ const GadgetDetails = () => {
       </div>
 
       {/* Details Card */}
-      <div className="flex flex-col md:flex-row justify-start items-center gap-10 bg-gray-700 mt-10 mx-20 p-5 rounded-xl">
+      <div className="flex flex-col md:flex-row justify-start items-center gap-10 bg-gray-700 my-10  mx-20 p-5 rounded-xl">
         <div className="w-full max-w-[424px]">
           <img
             className="w-full h-auto object-contain rounded-xl"
@@ -113,7 +118,7 @@ const GadgetDetails = () => {
                 <IoCartOutline />
               </span>
             </button>
-            <button className="border-1 border-gray-300 py-1 px-2 rounded-xl btn">
+            <button onClick={() => handleWish(product)} className="border-1 border-gray-300 py-1 px-2 rounded-xl btn">
               <GiSelfLove />
             </button>
           </div>
