@@ -107,7 +107,7 @@ const Dashboard = () => {
         <div>
           <div>
             {/* Cart's info */}
-            <div className="flex flex-col md:flex-row justify-between items-center p-3">
+            <div className="flex flex-col md:flex-row justify-between items-center p-3 gap-5">
               <div>
                 <h3 className="text-2xl ml-2 font-bold">Cart</h3>
               </div>
@@ -118,7 +118,7 @@ const Dashboard = () => {
                 </h3>
                 <button
                   onClick={() => handleSort()}
-                  className="text-purple-800 text-sm px-5 py-2 text-center me-2 mb-2 border-1  rounded-full border-purple-500"
+                  className="text-gray-300 font-bold text-sm px-5 py-2 text-center me-2 mb-2 border-1  rounded-full border-purple-500"
                 >
                   Sort by Price
                 </button>

@@ -38,9 +38,9 @@ const GadgetsCard = () => {
       <h1 className="text-center text-3xl font-bold my-5">
         Explore Cutting-Edge Gadgets
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {/* showing category */}
-        <div className="text-center flex flex-col bg-gray-800 mx-7 rounded-xl w-fit self-start py-5">
+        <div className="text-center flex flex-col bg-gray-800 md:justify-center mx-auto rounded-xl w-fit self-start py-5">
           <NavLink
             to="/category/all"
             onClick={()=>setAllData(data.slice(0,5))}
@@ -59,7 +59,7 @@ const GadgetsCard = () => {
         </div>
 
         {/* Showing Cards */}
-        <div className="col-span-3 ">
+        <div className="col-span-3 mx-5 mb-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
             {allData.length <= 0 ? (
               <h1 className="text-4xl font-bold text-red-600 text-center col-span-full mt-20">

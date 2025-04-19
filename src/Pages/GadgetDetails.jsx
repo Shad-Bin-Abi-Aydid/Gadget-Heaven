@@ -3,17 +3,25 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { GiSelfLove } from "react-icons/gi";
 import { IoCartOutline } from "react-icons/io5";
 import { addCartData } from "../utilities/localStroge";
-import { addWishData } from "../utilities/wishListStorage";
+import { addWishData, getAllWishData } from "../utilities/wishListStorage";
 
 const GadgetDetails = () => {
   const data = useLoaderData();
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [disabledBtn, setDisabledBtn] = useState(false);
 
   useEffect(() => {
     const findData = data.find((item) => item.product_id == id);
     setProduct(findData);
   }, [data, id]);
+
+  useEffect(() =>{
+    const wishData = getAllWishData();
+    const isExist = wishData.find((item) => item.product_id == id);
+    setDisabledBtn(isExist);
+
+  },[id]);
 
   if (!product) return <p>Loading...</p>;
 
@@ -35,6 +43,7 @@ const GadgetDetails = () => {
 
   const handleWish = (product) =>{
     addWishData(product);
+    setDisabledBtn(true);
   }
 
   return (
@@ -118,7 +127,7 @@ const GadgetDetails = () => {
                 <IoCartOutline />
               </span>
             </button>
-            <button onClick={() => handleWish(product)} className="border-1 border-gray-300 py-1 px-2 rounded-xl btn">
+            <button disabled={disabledBtn} onClick={() => handleWish(product)} className="border-1 border-gray-300 py-1 px-2 rounded-xl btn">
               <GiSelfLove />
             </button>
           </div>
