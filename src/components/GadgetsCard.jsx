@@ -3,6 +3,7 @@ import {
   Link,
   NavLink,
   useLoaderData,
+  useLocation,
   useParams,
 } from "react-router-dom";
 import Category from "./Category";
@@ -13,6 +14,7 @@ const GadgetsCard = () => {
   const { categoryId } = useParams();
   const [allData, setAllData] = useState(data);
   const [category, setCategory] = useState([]);
+  const {pathname} = useLocation();
 
   useEffect(() => {
     fetch("./category.json")
@@ -22,9 +24,9 @@ const GadgetsCard = () => {
 
   useEffect(() => {
     if (!categoryId) {
-      setAllData(data);
-    }else if(categoryId === "all"){
       setAllData(data.slice(0,9));
+    }else if(categoryId === "all"){
+      setAllData(data);
     }else {
       const categoryWiseData = [...data].filter(
         (item) => item.category_id === categoryId
@@ -43,7 +45,6 @@ const GadgetsCard = () => {
         <div className="text-center flex flex-col bg-gray-800 md:justify-center mx-auto rounded-xl w-fit self-start py-5">
           <NavLink
             to="/category/all"
-            onClick={()=>setAllData(data.slice(0,5))}
             className={({ isActive }) =>
               `btn bg-gray-600 mx-16 my-3 p-2 rounded-xl ${
                 isActive ? "text-warning" : "hover:text-warning"

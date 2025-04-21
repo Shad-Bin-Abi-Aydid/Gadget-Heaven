@@ -44,7 +44,7 @@ const removeCarts = id =>{
 
 // Remove all item from local Storage
 const removeAll = () =>{
-    localStorage.clear();
+    localStorage.removeItem('cart');
 }
 
 export{addCartData, getAllCartData, removeCarts, removeAll}

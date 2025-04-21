@@ -56,6 +56,14 @@ const Navbar = () => {
             >
               Dashboard
             </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `font-bold ${isActive ? "text-warning" : "hover:text-warning"}`
+              }
+            >
+              About US
+            </NavLink>
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost text-2xl">Gadget Heaven</Link>
@@ -86,6 +94,14 @@ const Navbar = () => {
           >
             Dashboard
           </NavLink>
+          <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `font-bold ${isActive ? "text-warning" : "hover:text-warning"}`
+              }
+            >
+              About US
+            </NavLink>
         </ul>
       </div>
       <div className="navbar-end flex gap-5">

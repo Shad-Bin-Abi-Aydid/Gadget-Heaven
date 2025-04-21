@@ -15,8 +15,8 @@ const Dashboard = () => {
   const [wishList, setWishList] = useState([]);
   const [disablePurchBtn, setDisablePurchBtn] = useState(false);
   const [activebtn, setActiveBtn] = useState("cart");
-
-
+  const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const carts = getAllCartData();
@@ -28,6 +28,10 @@ const Dashboard = () => {
     const wishes = getAllWishData();
     setWishList(wishes);
   }, []);
+
+  useEffect(() => {
+    setDisablePurchBtn(products.length === 0);
+  }, [products]);
 
   const handleWishListRemove = (id) => {
     removeWish(id);
@@ -52,6 +56,13 @@ const Dashboard = () => {
     const carts = getAllCartData();
     setProducts(carts);
     setDisablePurchBtn(carts.length === 0);
+
+    setShowModal(true);
+
+    setTimeout(() => {
+      setShowModal(false);
+      navigate("/");
+    }, 3000);
   };
 
   const handleAddtoCart = (item) => {
@@ -78,7 +89,7 @@ const Dashboard = () => {
         </p>
         <div className="flex justify-center gap-5">
           <NavLink
-          to={`/dashboard/${"cart"}`}
+            to={`/dashboard/${"cart"}`}
             onClick={() => setActiveBtn("cart")}
             className={({ isActive }) =>
               `border-1 px-4 py-1 rounded-full ${
@@ -89,7 +100,7 @@ const Dashboard = () => {
             Cart
           </NavLink>
           <NavLink
-          to={`/dashboard/${"wish"}`}
+            to={`/dashboard/${"wish"}`}
             onClick={() => setActiveBtn("wish")}
             className={({ isActive }) =>
               `border-1 px-4 py-1 rounded-full ${
@@ -139,7 +150,10 @@ const Dashboard = () => {
             {/* cart's */}
           </div>
           {products.map((item) => (
-            <div className="flex justify-between items-center bg-gray-100 p-5 m-5 rounded-xl text-black shadow-lg">
+            <div
+              key={item.product_id}
+              className="flex justify-between items-center bg-gray-100 p-5 m-5 rounded-xl text-black shadow-lg"
+            >
               {/* product details */}
               <div className="flex flex-col md:flex-row justify-start gap-10">
                 {/* Product image */}
@@ -181,7 +195,10 @@ const Dashboard = () => {
           </div>
 
           {wishList.map((item) => (
-            <div className="flex justify-between items-center bg-gray-100 p-5 m-5 rounded-xl text-black shadow-lg">
+            <div
+              key={item.product_id}
+              className="flex justify-between items-center bg-gray-100 p-5 m-5 rounded-xl text-black shadow-lg"
+            >
               {/* wishlist details */}
               <div className="flex flex-col md:flex-row justify-start gap-10">
                 {/* wishList image */}
@@ -204,7 +221,7 @@ const Dashboard = () => {
                     onClick={() => handleAddtoCart(item)}
                     className="bg-[#9538E2] px-2 py-1 text-white rounded-full"
                   >
-                    Add to Card
+                    Add to Cart
                   </button>
                 </div>
               </div>
@@ -218,6 +235,17 @@ const Dashboard = () => {
               </div>
             </div>
           ))}
+        </div>
+      )}
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="bg-white p-10 rounded-2xl shadow-lg text-center max-w-sm">
+            <h2 className="text-2xl font-bold text-[#9538E2] mb-4">
+              🎉 Congratulations!
+            </h2>
+            <p className="text-gray-700">Your purchase was successful.</p>
+            <p className="text-sm text-gray-400 mt-2">Redirecting to Home...</p>
+          </div>
         </div>
       )}
     </div>

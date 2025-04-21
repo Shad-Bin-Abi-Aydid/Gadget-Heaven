@@ -6,6 +6,7 @@ import GadgetsCard from "../components/GadgetsCard";
 import Statistics from "../Pages/Statistics";
 import Dashboard from "../Pages/Dashboard";
 import GadgetDetails from "../Pages/GadgetDetails";
+import About from "../components/About";
 
 const routes = createBrowserRouter([
     {
@@ -27,11 +28,6 @@ const routes = createBrowserRouter([
                         path:'/category/:categoryId',
                         element:<GadgetsCard></GadgetsCard>,
                         loader:()=>fetch('../gadgets.json'),
-                    },
-                    {
-                        path:'/category/all',
-                        element:<GadgetsCard></GadgetsCard>,
-                        loader:()=>fetch('../gadgets.json')
                     }
                 ]
             },
@@ -51,6 +47,11 @@ const routes = createBrowserRouter([
                 path:"/gadget/:id",
                 element:<GadgetDetails></GadgetDetails>,
                 loader:()=>fetch('../gadgets.json')
+            },
+            {
+                path:"/about",
+                element:<About></About>
+                
             }
         ]
     }
