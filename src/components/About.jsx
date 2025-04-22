@@ -9,15 +9,15 @@ const About = () => {
           Welcome to Gadget Heaven – Where Innovation Meets Everyday Life
         </h2>
       </div>
-      <div className="grid grid-cols-3">
-        <p className="col-span-2">
+      <div className="grid grid-cols-3 m-10 gap-10 pb-10">
+        <p className="col-span-2 border-1 rounded-xl p-5 bg-gradient-to-r from-[#9538E2] to-gray-500 ">
           At Gadget Heaven, we’re more than just a tech store — we’re a team of
           passionate tech enthusiasts committed to bringing you the latest and
           greatest in gadgets, electronics, and smart accessories. Whether
           you're a casual shopper, a tech geek, or a professional looking for
           reliable gear, we’ve got something for everyone.
         </p>
-        <p className="col-span-2 col-start-2">
+        <p className="col-span-2 col-start-2 border-1 rounded-xl p-5 bg-gradient-to-r from-gray-500 to-[#9538E2]">
           Join thousands of happy customers who trust Gadget Haven to keep them
           ahead in a fast-moving digital world. We’re always here to help,
           guide, and geek out with you.
