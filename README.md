@@ -4,7 +4,7 @@ Gadget Heaven is a modern React-based web application for browsing and discoveri
 
 ## Live Link
 
-[poetic-cobbler-07a22a.netlify.app]
+[https://brilliant-khapse-42a48d.netlify.app/]
 
 
 ## Requirement Documents Link
